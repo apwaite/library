@@ -19,6 +19,13 @@
     rgba(46, 49, 49, 1) 100%,
     rgba(191, 191, 191, 1) 100%
   );
+  --bg-form-card: rgb(247, 247, 247);
+  --book-btn-color: rgb(240, 173, 78);
+  --book-btn-hover: rgb(238, 156, 42);
+  --del-color: rgb(217, 83, 79);
+  --del-hover: rgb(219, 61, 55);
+  --card-read-color: rgb(92, 184, 92);
+  --card-read-hover: rgb(59, 182, 59);
   --font: rgba(14, 14, 14);
   /* rgb(2, 117, 216) */
 }
@@ -41,70 +48,118 @@ header {
   background: var(--header-color);
 }
 
+header img {
+  margin-right: 1rem;
+  height: 4rem;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Navigation */
-
-/* Navbar/Add New Book Button */
+/* Navigation Styling*/
 
 nav {
   min-height: 4rem;
 }
 
-.addBook {
+.add-book-nav {
   display: flex;
   justify-content: center;
   margin: 1rem;
 }
 
-.addBookBtn {
+button {
+  cursor: pointer;
+}
+
+.add-book-btn {
   outline: none;
   /* margin: rem; */
   border-radius: 0.5rem;
-  background: rgb(240, 173, 78);
+  background: var(--book-btn-color);
   margin: 0.5rem;
 }
 
-.addBookBtn:hover {
-  background: rgb(238, 156, 42);
+.add-book-btn:hover {
+  background: var(--book-btn-hover);
 }
 
-article {
+/* Main App Styling*/
+
+.main {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.showBooks {
+.show-books {
   display: flex;
-  /* background-color: limegreen; */
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
   justify-content: left;
 }
 
-/* Add New Book Form */
+/* Add New Book Section*/
 
-.formContainer {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+.add-book {
+  display: none;
+  width: max-content;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   position: fixed;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-#form {
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  max-width: 100vw;
+  max-height: 100vh;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2rem;
+  background: var(--bg-form-card);
+  border-radius: 0.5rem;
+  border: 1px solid rgb(0, 0, 0);
 }
 
-.bookForm {
-  display: none;
-  padding: 2rem;
-  background: blue;
+.form-styling {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1rem;
+}
+
+.close-form {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--del-color);
+}
+
+.close-form:hover,
+.close-form:focus {
+  color: var(--del-hover);
+}
+
+.form-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  width: 4rem;
+  outline: none;
 }
 
 /* Card Styling */
@@ -112,59 +167,85 @@ article {
 .card {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
+  min-height: 20rem;
   max-height: 20rem;
+  min-width: 10rem;
   max-width: 10rem;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border: 1px solid black;
   border-radius: 0.5rem;
-  margin-left: 1rem;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
   font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
 }
 
-.cardPic {
-  height: 6rem;
+.card p {
+  text-align: left;
+}
+
+.card-top-title,
+.card-top-author,
+.card-top-pages {
+  padding-top: 0.5rem;
+  height: 2rem;
   background: rgb(91, 192, 222);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
   border: 1px solid rgb(0, 0, 0);
 }
 
-.card:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4);
-  transform: scale(1.1);
+.card-top-title {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
-.cardTitle,
-.cardAuthor {
+/* .card-top,
+img {
+  text-align: center;
+  height: 5rem;
+} */
+
+.card:hover,
+.card:focus {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+  padding-top: 1rem;
+}
+
+.card-title,
+.card-author,
+.card-pages {
   padding: 0.5rem;
-  background: rgb(247, 247, 247);
-  border: 1px solid black;
+  background: var(--bg-form-card);
+  border: 1px solid rgb(0, 0, 0);
   flex: 1;
 }
 
-.cardBtn {
+.card-btn {
   outline: none;
-  cursor: pointer;
 }
 
-.cardRead {
-  background: rgb(92, 184, 92);
+.card-read {
+  background: var(--card-read-color);
 }
 
-.cardRead:hover {
-  background: rgb(59, 182, 59);
+.card-read:hover,
+.card-read:focus {
+  background: var(--card-read-hover);
 }
 
-.cardDel {
+.card-del {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  background: rgb(217, 83, 79);
+  background: var(--del-color);
 }
 
-.cardDel:hover {
-  background: rgb(219, 61, 55);
+.card-del:hover,
+.card-del:focus {
+  background: var(--del-hover);
 }
 
 /* Footer Styling */
@@ -177,4 +258,5 @@ footer {
   border-top: 1px solid rgba(0, 0, 0);
   font-size: 0.8rem;
   min-height: 2rem;
+  margin-top: 1rem;
 }
