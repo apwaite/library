@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Library</title>
-</head>
-<body>
-  
-  <script src="script.js">
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Library App</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="images/opened-book-3169.svg"
+        alt="Stack of books - Icon by Iconpacks"
+      />
+      <h1>Library App</h1>
+    </header>
+    <section class="main">
+      <nav class="add-book-nav">
+        <button class="add-book-btn"><strong>+ Add New Book</strong></button>
+      </nav>
+      <section class="show-books">
+        <div class="card">
+          <div class="card-top-title">[ Title ]</div>
+          <div class="card-title">Mistborn: The Final Empire</div>
+          <div class="card-top-author">[ Title ]</div>
+          <div class="card-author">Brandon Sanderson</div>
+          <div class="card-pages">567</div>
+          <button class="card-btn card-read">Read</button>
+          <button class="card-btn card-del">Delete</button>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <strong>Made with &#10084;&#65039; by Andrew</strong>
+    </footer>
+    <section class="add-book">
+      <div class="add-book-form">
+        <h2>+ Add New Book</h2>
+        <span class="close-form">&times;</span>
+        <label for="title">
+          Book Title:*
+          <input
+            type="text"
+            id="title"
+            class="form-styling"
+            name="title"
+            placeholder="Title"
+            required
+          />
+        </label>
+        <label for="author">
+          Author:*
+          <input
+            type="text"
+            id="author"
+            class="form-styling"
+            name="author"
+            placeholder="Author"
+          />
+        </label>
+        <label for="totalPages">
+          Total Pages:*
+          <input
+            type="number"
+            id="pages"
+            class="form-styling"
+            name="pages"
+            placeholder="Pages Total"
+          />
+        </label>
+        <label for="read">
+          Read?:*
+          <select id="isRead" class="form-styling" name="isRead">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
+        </label>
+        <div class="add-book-buttons">
+          <button type="submit" class="form-btn add-form-btn">Add</button>
+          <button type="reset" class="form-btn clear-form-btn">Clear</button>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
