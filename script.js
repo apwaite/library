@@ -1,42 +1,42 @@
 window.addEventListener("load", () => {
-  renderCard(myLibrary);
+  render(myLibrary);
 });
 
 // Add new book button functionality
-const newBookBtn = document.querySelector(".add-book-btn");
 const addBookForm = document.querySelector(".add-book");
-newBookBtn.addEventListener(
-  "click",
-  () => (addBookForm.style.display = "flex")
-);
+const newBookBtn = document
+  .querySelector(".add-book-btn")
+  .addEventListener("click", () => (addBookForm.style.display = "flex"));
 
 // Close functionality new book form
-const closeBookForm = document.querySelector(".close-form");
-closeBookForm.addEventListener(
-  "click",
-  () => (addBookForm.style.display = "none")
-);
+const closeBookForm = document
+  .querySelector(".close-form")
+  .addEventListener("click", (e) => (addBookForm.style.display = "none"));
 
 // Add button functionality new book form
-addBookBtn = document.querySelector(".add-form-btn");
-addBookBtn.addEventListener("click", addBookToLibrary);
+const addBookBtn = document
+  .querySelector(".add-form-btn")
+  .addEventListener("click", addBookToLibrary);
 
 // Clear button functionality new book form
-clearFormBtn = document.querySelector(".clear-form-btn");
-clearFormBtn.addEventListener("click", clearForm);
+const clearFormBtn = document
+  .querySelector(".clear-form-btn")
+  .addEventListener("click", clearForm);
+
+// Read/unread button functionality
 
 let myLibrary = [
   {
     title: "Mistborn: The Final Empire",
     author: "Brandon Sanderson",
     pages: 647,
-    isRead: false,
+    isRead: "Unread",
   },
   {
     title: "Mistborn: The Well of Ascension",
     author: "Brandon Sanderson",
     pages: 952,
-    isRead: true,
+    isRead: "Read",
   },
 ];
 
@@ -58,60 +58,69 @@ function clearForm() {
 
 function addBookToLibrary() {
   addBookForm.style.display = "none";
-  // return array.map((books) => books);
   addBook = new Book(title, author, pages, isRead);
   myLibrary.push(addBook);
-
-  renderCard(myLibrary);
+  render(myLibrary);
   clearForm();
 }
 
-function renderCard(array) {
+function render() {
   const display = document.querySelector(".show-books");
   const books = document.querySelectorAll(".card");
 
   books.forEach((book) => display.removeChild(book));
 
-  for (let i = 0; i < myLibrary.length; i++) {
-    createCard(myLibrary[i]);
-  }
+  myLibrary.forEach((book) => {
+    createCard(book);
+  });
 }
 
-function createCard(item) {
-  const addDiv = document.querySelector(".show-books");
+function createCard(book) {
+  const addCard = document.querySelector(".show-books");
 
-  let id = myLibrary.indexOf(item);
-
-  let cardRead = "";
-
-  if (item.isRead === "true" || true) {
-    cardRead = "Read";
-  } else if (item.isRead === "false" || false) {
-    cardRead = "Unread";
-  }
+  let id = myLibrary.indexOf(book);
 
   const card = `<div class="card" id="${id}">
                   <div class="card-top-title">Title:</div>
-                  <div class="card-title"><p>${item.title}</p></div>
+                  <div class="card-title"><p>${book.title}</p></div>
                   <div class="card-top-author">Author:</div>
-                  <div class="card-author"><p>${item.author}</p></div>
+                  <div class="card-author"><p>${book.author}</p></div>
                   <div class="card-top-pages">Page(s) Total:</div>
-                  <div class="card-pages">${item.pages}</div>
-                  <button class="card-btn card-read">${cardRead}</button>
-                  <button class="card-btn card-del">Delete</button>
+                  <div class="card-pages">${book.pages}</div>
+                  <button class="card-btn card-read-${id}">${book.isRead}</button>
+                  <button class="card-btn btn-del card-del-${id}">Delete</button>
                 </div>`;
 
-  addDiv.innerHTML += card;
+  addCard.insertAdjacentHTML("beforeend", card);
 
-  // const readBtn = document.querySelector(".card-read");
+  const changeRead = document.querySelector(`.card-read-${id}`);
 
-  // readBtn.addEventListener("click", () => {
-  //   if (item.isRead === "true") {
-  //     cardRead = "Read";
-  //     readBtn.style.backgroundColor = "rgb(2, 117, 216)";
-  //   } else if (item.isRead === "false") {
-  //     cardRead = "Unread";
-  //   }
-  //   renderCard();
-  // });
+  if (book.isRead === "Read") {
+    changeRead.style.backgroundColor = "rgb(59, 182, 59)";
+  } else {
+    changeRead.style.backgroundColor = "rgb(217, 83, 79)";
+  }
+
+  changeRead.addEventListener("click", () => {
+    console.log(`Working on button id ${id}`);
+    if (book.isRead === "Read") {
+      book.isRead = "Unread";
+      changeRead.textContent = "Unread";
+      changeRead.style.backgroundColor = "rgb(217, 83, 79)";
+      console.log(book.isRead);
+    } else if (book.isRead === "Unread") {
+      book.isRead = "Read";
+      changeRead.textContent = "Read";
+      changeRead.style.backgroundColor = "rgb(59, 182, 59)";
+      console.log(book.isRead);
+    }
+  });
+
+  const delBook = document.querySelector(`.card-del-${id}`);
+
+  delBook.addEventListener("click", () => {
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+    console.log(id, "Working");
+    render();
+  });
 }
