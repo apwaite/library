@@ -22,12 +22,9 @@
   --bg-form-card: rgb(247, 247, 247);
   --book-btn-color: rgb(240, 173, 78);
   --book-btn-hover: rgb(238, 156, 42);
-  --del-color: rgb(217, 83, 79);
-  --del-hover: rgb(219, 61, 55);
-  --card-read-color: rgb(92, 184, 92);
-  --card-read-hover: rgb(59, 182, 59);
+  --del-color: rgb(219, 61, 55);
   --font: rgba(14, 14, 14);
-  /* rgb(2, 117, 216) */
+  --border-color: rgba(0, 0, 0);
 }
 
 body {
@@ -220,24 +217,16 @@ img {
 .card-pages {
   padding: 0.5rem;
   background: var(--bg-form-card);
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--border-color);
   flex: 1;
 }
 
 .card-btn {
   outline: none;
+  font-weight: Bold;
 }
 
-.card-read {
-  background: var(--card-read-color);
-}
-
-.card-read:hover,
-.card-read:focus {
-  background: var(--card-read-hover);
-}
-
-.card-del {
+.btn-del {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background: var(--del-color);
@@ -255,7 +244,7 @@ footer {
   justify-content: center;
   align-items: center;
   background: var(--footer-color);
-  border-top: 1px solid rgba(0, 0, 0);
+  border-top: 1px solid var(--border-color);
   font-size: 0.8rem;
   min-height: 2rem;
   margin-top: 1rem;
