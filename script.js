@@ -53,7 +53,7 @@ function clearForm() {
   title.value = "";
   author.value = "";
   pages.value = "";
-  isRead.value = "Unread";
+  isRead.value = "";
 }
 
 function addBookToLibrary() {
