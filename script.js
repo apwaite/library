@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  render(myLibrary);
+  retrieveData();
 });
 
 // Add new book button functionality
@@ -11,7 +11,7 @@ const newBookBtn = document
 // Close functionality new book form
 const closeBookForm = document
   .querySelector(".close-form")
-  .addEventListener("click", (e) => (addBookForm.style.display = "none"));
+  .addEventListener("click", () => (addBookForm.style.display = "none"));
 
 // Add button functionality new book form
 const addBookBtn = document
@@ -53,7 +53,7 @@ function clearForm() {
   title.value = "";
   author.value = "";
   pages.value = "";
-  isRead.value = "";
+  isRead.value = "Unread";
 }
 
 function addBookToLibrary() {
@@ -107,12 +107,16 @@ function createCard(book) {
       book.isRead = "Unread";
       changeRead.textContent = "Unread";
       changeRead.style.backgroundColor = "rgb(217, 83, 79)";
+      updateData();
       console.log(book.isRead);
-    } else if (book.isRead === "Unread") {
+      console.log(myLibrary);
+    } else {
       book.isRead = "Read";
       changeRead.textContent = "Read";
       changeRead.style.backgroundColor = "rgb(59, 182, 59)";
+      updateData();
       console.log(book.isRead);
+      console.log(myLibrary);
     }
   });
 
@@ -120,7 +124,25 @@ function createCard(book) {
 
   delBook.addEventListener("click", () => {
     myLibrary.splice(myLibrary.indexOf(book), 1);
-    console.log(id, "Working");
+    updateData();
     render();
   });
+}
+
+// Stores myLibrary array to localStorage
+
+function updateData() {
+  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+// Retrieves myLibrary array from localStorage
+
+function retrieveData() {
+  if (!localStorage.myLibrary) {
+    render();
+  } else {
+    let library = JSON.parse(localStorage.getItem("myLibrary"));
+    myLibrary = library;
+    render();
+  }
 }
