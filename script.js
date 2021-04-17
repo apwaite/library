@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  retrieveData();
+  getData();
 });
 
 // Add new book button functionality
@@ -25,20 +25,7 @@ const clearFormBtn = document
 
 // Read/unread button functionality
 
-let myLibrary = [
-  {
-    title: "Mistborn: The Final Empire",
-    author: "Brandon Sanderson",
-    pages: 647,
-    isRead: "Unread",
-  },
-  {
-    title: "Mistborn: The Well of Ascension",
-    author: "Brandon Sanderson",
-    pages: 952,
-    isRead: "Read",
-  },
-];
+let myLibrary = [];
 
 let addBook;
 
@@ -53,13 +40,14 @@ function clearForm() {
   title.value = "";
   author.value = "";
   pages.value = "";
-  isRead.value = "";
+  isRead.value = "Unread";
 }
 
 function addBookToLibrary() {
   addBookForm.style.display = "none";
   addBook = new Book(title, author, pages, isRead);
   myLibrary.push(addBook);
+  setData();
   render(myLibrary);
   clearForm();
 }
@@ -107,14 +95,12 @@ function createCard(book) {
       book.isRead = "Unread";
       changeRead.textContent = "Unread";
       changeRead.style.backgroundColor = "rgb(217, 83, 79)";
-      updateData();
-      console.log(book.isRead);
-      console.log(myLibrary);
+      setData();
     } else {
       book.isRead = "Read";
       changeRead.textContent = "Read";
       changeRead.style.backgroundColor = "rgb(59, 182, 59)";
-      updateData();
+      setData();
       console.log(book.isRead);
       console.log(myLibrary);
     }
@@ -124,20 +110,20 @@ function createCard(book) {
 
   delBook.addEventListener("click", () => {
     myLibrary.splice(myLibrary.indexOf(book), 1);
-    updateData();
+    setData();
     render();
   });
 }
 
 // Stores myLibrary array to localStorage
 
-function updateData() {
+function setData() {
   localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
 // Retrieves myLibrary array from localStorage
 
-function retrieveData() {
+function getData() {
   if (!localStorage.myLibrary) {
     render();
   } else {
