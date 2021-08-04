@@ -29,11 +29,13 @@ let myLibrary = [];
 
 let addBook;
 
-function Book(title, author, pages, isRead) {
-  (this.title = title.value),
-    (this.author = author.value),
-    (this.pages = pages.value),
-    (this.isRead = isRead.value);
+class Book {
+  constructor(title, author, pages, isRead) {
+    (this.title = title.value),
+      (this.author = author.value),
+      (this.pages = pages.value),
+      (this.isRead = isRead.value);
+  }
 }
 
 function clearForm() {
