@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('//use.fontawesome.com/releases/v5.0.7/css/all.css');
 
 :root {
   --header-color: linear-gradient(
@@ -28,7 +30,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--font);
   background: var(--bg-color);
   min-height: 100vh;
@@ -248,4 +250,8 @@ footer {
   font-size: 0.8rem;
   min-height: 2rem;
   margin-top: 1rem;
+}
+
+.fa-github {
+  color: var(--font);
 }
