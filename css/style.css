@@ -9,13 +9,14 @@
   --book-btn-color: rgb(240, 173, 78);
   --book-btn-hover: rgb(238, 156, 42);
   --del-color: rgb(219, 61, 55);
-  --font: rgba(14, 14, 14);
+  --font-primary: #f5f5f5;
+  --font-secondary: #212121;
   --border-color: rgba(0, 0, 0);
 }
 
 body {
   font-family: var(--main-font);
-  color: var(--font);
+  color: var(--font-secondary);
   background: var(--primary-bg-color);
   min-height: 100vh;
   display: flex;
@@ -29,6 +30,7 @@ header {
   height: 5rem;
   border-bottom: 1px solid rgba(0, 0, 0);
   background: var(--secondary-bg-color);
+  color: var(--font-primary);
 }
 
 header img {
@@ -233,10 +235,11 @@ footer {
   font-size: 0.8rem;
   min-height: 2rem;
   margin-top: 1rem;
+  color: var(--font-primary);
 }
 
 .fa-github {
-  color: var(--font);
+  color: var(--font-primary);
   transition: all 0.5s ease-in-out;
 }
 
