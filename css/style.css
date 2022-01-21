@@ -3,6 +3,7 @@
 @import url('//use.fontawesome.com/releases/v5.0.7/css/all.css');
 
 :root {
+  --main-font: 'Roboto', 'sans-serif';
   --header-color: linear-gradient(
     30deg,
     rgba(108, 122, 137, 1) 0%,
@@ -30,7 +31,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   color: var(--font);
   background: var(--bg-color);
   min-height: 100vh;
