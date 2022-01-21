@@ -4,24 +4,8 @@
 
 :root {
   --main-font: 'Roboto', 'sans-serif';
-  --header-color: linear-gradient(
-    30deg,
-    rgba(108, 122, 137, 1) 0%,
-    rgb(117, 119, 119) 100%,
-    rgba(191, 191, 191, 1) 100%
-  );
-  --bg-color: linear-gradient(
-    30deg,
-    rgb(120, 122, 124) 0%,
-    rgb(196, 196, 196) 100%,
-    rgba(191, 191, 191, 1) 100%
-  );
-  --footer-color: linear-gradient(
-    30deg,
-    rgba(108, 122, 137, 1) 0%,
-    rgba(46, 49, 49, 1) 100%,
-    rgba(191, 191, 191, 1) 100%
-  );
+  --primary-bg-color: #f5f5f5;
+  --secondary-bg-color: #212121;
   --bg-form-card: rgb(247, 247, 247);
   --book-btn-color: rgb(240, 173, 78);
   --book-btn-hover: rgb(238, 156, 42);
