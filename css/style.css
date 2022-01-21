@@ -97,7 +97,6 @@ button {
   left: 0;
   position: fixed;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0.2);
   z-index: 1;
 }
 
