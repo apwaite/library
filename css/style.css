@@ -228,7 +228,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--footer-color);
+  background: var(--secondary-bg-color);
   border-top: 1px solid var(--border-color);
   font-size: 0.8rem;
   min-height: 2rem;
