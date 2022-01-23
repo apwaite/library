@@ -184,12 +184,6 @@ button {
   border-top-right-radius: 0.5rem;
 }
 
-/* .card-top,
-img {
-  text-align: center;
-  height: 5rem;
-} */
-
 .card:hover,
 .card:focus {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.4);
