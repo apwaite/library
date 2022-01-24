@@ -90,6 +90,8 @@ button {
 
 /* Add New Book Section*/
 
+/* TODO: Additional styling for new book section */
+
 .add-book {
   display: none;
   width: max-content;
