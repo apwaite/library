@@ -148,6 +148,8 @@ button {
 
 /* Card Styling */
 
+/* TODO: Additional card styling */
+
 .card {
   display: flex;
   flex-direction: column;
