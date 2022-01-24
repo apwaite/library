@@ -62,7 +62,6 @@ button {
 
 .add-book-btn {
   outline: none;
-  /* margin: rem; */
   border-radius: 0.5rem;
   background: var(--book-btn-color);
   margin: 0.5rem;
