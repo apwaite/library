@@ -242,8 +242,6 @@ footer {
   transition: all 0.5s ease-in-out;
 }
 
-/* TODO: Add animation to GH icon*/
-
 .fa-github:hover {
   -moz-transform: scale(1.2);
   -webkit-transform: scale(1.2);
