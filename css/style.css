@@ -62,6 +62,8 @@ button {
   cursor: pointer;
 }
 
+/* TODO: Update Add New Book button styling*/
+
 .add-book-btn {
   outline: none;
   border-radius: 0.5rem;
