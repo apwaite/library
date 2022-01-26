@@ -58,21 +58,16 @@ nav {
   margin: 1rem;
 }
 
-button {
-  cursor: pointer;
-}
-
 /* TODO: Update Add New Book button styling*/
 
 .add-book-btn {
   outline: none;
+  cursor: pointer;
   border-radius: 0.5rem;
-  background: var(--book-btn-color);
   margin: 0.5rem;
 }
 
 .add-book-btn:hover {
-  background: var(--book-btn-hover);
 }
 
 /* Main App Styling*/
