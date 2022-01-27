@@ -88,7 +88,7 @@ function createCard(book) {
   if (book.isRead === 'Read') {
     changeRead.style.backgroundColor = 'rgb(59, 182, 59)';
   } else {
-    changeRead.style.backgroundColor = 'rgb(217, 83, 79)';
+    changeRead.style.backgroundColor = '#FF0000';
   }
 
   changeRead.addEventListener('click', () => {
@@ -96,7 +96,7 @@ function createCard(book) {
     if (book.isRead === 'Read') {
       book.isRead = 'Unread';
       changeRead.textContent = 'Unread';
-      changeRead.style.backgroundColor = 'rgb(217, 83, 79)';
+      changeRead.style.backgroundColor = '#FF0000';
       setData();
     } else {
       book.isRead = 'Read';
