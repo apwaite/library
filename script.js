@@ -86,7 +86,7 @@ function createCard(book) {
   const changeRead = document.querySelector(`.card-read-${id}`);
 
   if (book.isRead === 'Read') {
-    changeRead.style.backgroundColor = 'rgb(59, 182, 59)';
+    changeRead.style.backgroundColor = '#4BB543';
   } else {
     changeRead.style.backgroundColor = '#FF0000';
   }
@@ -101,7 +101,7 @@ function createCard(book) {
     } else {
       book.isRead = 'Read';
       changeRead.textContent = 'Read';
-      changeRead.style.backgroundColor = 'rgb(59, 182, 59)';
+      changeRead.style.backgroundColor = '#4BB543';
       setData();
       console.log(book.isRead);
       console.log(myLibrary);
