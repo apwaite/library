@@ -183,8 +183,8 @@ nav {
 }
 
 .card-top-title {
-  border-top-left-radius: 0.2rem;
-  border-top-right-radius: 0.2rem;
+  border-top-left-radius: 0.15rem;
+  border-top-right-radius: 0.15rem;
 }
 
 .card:hover,
