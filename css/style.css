@@ -148,6 +148,8 @@ nav {
 
 /* Card Styling */
 
+/* TODO: Refactor card shape and size to something mobile friendly */
+
 .card {
   display: flex;
   flex-direction: column;
