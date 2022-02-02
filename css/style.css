@@ -148,7 +148,7 @@ nav {
 
 /* Card Styling */
 
-/* TODO: Refactor card shape and size to something mobile friendly */
+/* TODO: Change card shape and size to a mobile friendly version */
 
 .card {
   display: flex;
