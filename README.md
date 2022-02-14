@@ -4,7 +4,7 @@
 
 A simple Library app that allows the user to add and view the books they're reading.
 
-[Link to Library App Page](https://apwaite.github.io/library/)
+[Link to Library Page](https://apwaite.github.io/library/)
 
 ## Instructions
 
